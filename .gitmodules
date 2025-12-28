@@ -5,3 +5,6 @@
 	path = site/themes/blowfish
 	url = https://github.com/nunocoracao/blowfish.git
 	branch = main
+[submodule "site/content/writeup/ctf"]
+	path = site/content/writeup/ctf
+	url = https://github.com/YarBurArt/ctf-worksheet
