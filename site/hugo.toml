@@ -1,3 +1,62 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://yarburart.github.io/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'YarBurArt'
+
+author = "YarBurArt"
+copyright = "YarBurArt"
+pagination.pagerSize = 10
+theme = "blowfish"
+enableRobotsTXT = true
+enableEmoji = true
+
+[markup]
+  _merge = "deep"
+
+[params]
+  #keywords = "Python, C#, C, Java, JavaScript, web services, scripts, bots, Linux, bash, automation, cybersecurity, security, code security, server security, DevOps, system administration, penetration testing, vulnerability research, secure coding, backend, SRE, CTF, writeup, walkthrough, red team, blue team, reverse engineering, forensics, capture the flag"
+  keywords = ["Python", "C#", "C", "Java", "JavaScript", "web services", "scripts", "bots", "Linux", "bash", "automation", "cybersecurity", "security", "code security", "server security", "DevOps", "system administration", "penetration testing", "vulnerability research", "secure coding", "backend", "SRE", "CTF", "writeup", "walkthrough", "red team", "blue team", "reverse engineering", "forensics", "capture the flag"]
+  subtitle = "Blog"
+  contentTypeName = "posts"
+  showAuthor = true
+
+  [params.author]
+  name = "YarBurArt"
+  email = "yaroslav.chayk@gmail.com"
+
+  [params.header]
+    logo = "logo.svg"
+    title = " yarburart"
+
+  [params.footer]
+    since = 2025
+    poweredby = true
+
+    [[params.social_media.items]]
+      enabled = true
+      title = 'Github'
+      icon = 'brand-github'
+      link = 'https://github.com/yarburart'
+
+[menu]
+
+  [[menu.main]]
+    identifier = "post"
+    name = "Posts"
+    pageRef = "posts"
+    weight = 10
+  [[menu.main]]
+    identifier = "writeup"
+    name = "Writeups"
+    pageRef = "writeup"
+    weight = 15
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    pageRef = "tags"
+    weight = 30
+
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
