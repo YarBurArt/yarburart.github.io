@@ -22,6 +22,8 @@ enableEmoji = true
   [params.author]
   name = "YarBurArt"
   email = "yaroslav.chayk@gmail.com"
+  image = "img/author-logo.png"
+  headline = "Developer on python / C# and Security Specialist"  
 
   [params.header]
     logo = "logo.svg"
@@ -31,12 +33,23 @@ enableEmoji = true
     since = 2025
     poweredby = true
 
-    [[params.social_media.items]]
-      enabled = true
-      title = 'Github'
-      icon = 'brand-github'
-      link = 'https://github.com/yarburart'
+  [params.social_media.items]
+    enabled = true
+    title = 'Github'
+    icon = 'brand-github'
+    link = 'https://github.com/yarburart'
 
+  [params.homepage]
+    layout = 'profile'
+    showRecent = true
+    showMoreLink = true
+    showMoreLinkDest = '/writeup/'
+    showRecentItems = 6
+    # todo homepageImage
+    cardView = true
+    cardViewScreenWidth = false
+    layoutBackgroundBlur = false 
+ 
 [menu]
 
   [[menu.main]]
@@ -54,7 +67,10 @@ enableEmoji = true
     name = "Tags"
     pageRef = "tags"
     weight = 30
-
+  [[menu.footer]]
+    name = "CV | About"
+    pageRef = "cv"
+    weight = 10
 
 [taxonomies]
 category = "categories"
