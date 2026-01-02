@@ -20,10 +20,14 @@ enableEmoji = true
   showAuthor = true
 
   [params.author]
-  name = "YarBurArt"
-  email = "yaroslav.chayk@gmail.com"
-  image = "img/author-logo.png"
-  headline = "Developer on python / C# and Security Specialist"  
+    name = "YarBurArt"
+    email = "yaroslav.chayk@gmail.com"
+    image = "img/author-logo.png"
+    headline = "Developer on python / C# and Security Specialist"  
+    links = [
+    { github = "https://github.com/yarburart" },
+    { mastodon = "https://infosec.exchange/@datashiper" },
+    ]
 
   [params.header]
     logo = "logo.svg"
@@ -33,7 +37,7 @@ enableEmoji = true
     since = 2025
     poweredby = true
 
-  [params.social_media.items]
+  [[params.social_media.items]]
     enabled = true
     title = 'Github'
     icon = 'brand-github'
@@ -49,6 +53,9 @@ enableEmoji = true
     cardView = true
     cardViewScreenWidth = false
     layoutBackgroundBlur = false 
+  
+  [params.article]
+    showTableOfContents = true
  
 [menu]
 
