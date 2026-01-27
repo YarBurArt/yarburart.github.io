@@ -84,7 +84,20 @@
             {{ if .Title }}
               {{ .Title | emojify }}
             {{ else }}
-              W / {{ replaceRE "^[0-9]+-?" "" .File.BaseFileName }}
+              {{/* get title as # from RawContent */}}
+              {{ $lines := split .RawContent "\n" }}
+              {{ $found := false }}
+              {{ range $lines }}
+                {{ if and (not $found) (findRE "^#\\s" .) }}
+                  {{ $found = true }}
+                  {{ trim (replaceRE "^#+\\s*" "" .) " " | emojify }}
+                {{ end }}
+              {{ end }}
+              {{ if not $found }}
+                {{/* elif just filename as title*/}}
+                {{ $name := replaceRE "^[0-9]+-?" "" .File.BaseFileName }}
+                {{ title $name }}
+              {{ end }}
             {{ end }}
           {{ if .Params.externalUrl }}
             <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
