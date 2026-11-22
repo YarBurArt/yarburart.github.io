@@ -1,5 +1,5 @@
 baseURL = 'https://yarburart.github.io/'
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'YarBurArt'
 
 author = "YarBurArt"
@@ -8,6 +8,9 @@ pagination.pagerSize = 10
 theme = "blowfish"
 enableRobotsTXT = true
 enableEmoji = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
 
 [markup]
   _merge = "deep"
@@ -56,6 +59,9 @@ enableEmoji = true
   
   [params.article]
     showTableOfContents = true
+
+  [params.list]
+    groupByYear = false
  
 [menu]
 
