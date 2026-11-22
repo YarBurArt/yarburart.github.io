@@ -3,8 +3,3 @@
 	url = https://github.com/nunocoracao/blowfish.git
 	branch = main
 	shallow = true
-
-[submodule "site/content/writeup/ctf"]
-	path = site/content/writeup/ctf
-	url = https://github.com/YarBurArt/ctf-worksheet
-	shallow = true
