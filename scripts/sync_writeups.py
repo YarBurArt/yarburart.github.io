@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Generate Hugo writeups from the README-only ctf-worksheet repo.
+"""Turn the ctf-worksheet READMEs into Hugo pages.
 
-The GitHub repo stays the source of truth: one README.md per page, no
-front matter. This script derives Hugo front matter, page bundles and
-section pages, and copies assets.
+ctf-worksheet is the source: one README.md per page, no front matter.
+This script adds the front matter Hugo needs, creates page bundles and
+section pages, rewrites links between writeups, and copies assets.
 
 Usage:
     python3 scripts/sync_writeups.py [--source ../ctf-worksheet]
@@ -94,7 +94,7 @@ def display_title(directory: Path) -> str:
 
 
 def page_meta(directory: Path, source_root: Path, source_title: str) -> dict[str, str]:
-    """Derive source/event/category from the folder path."""
+    """Read source, event and category from the folder path."""
     parts = directory.relative_to(source_root).parts
     below = parts[1:]  # parts[0] is the source folder (ctf-ru, htb, ...)
 
@@ -108,11 +108,17 @@ def page_meta(directory: Path, source_root: Path, source_title: str) -> dict[str
     event_title = display_title(source_root / parts[0] / event) if event else source_title
     category_title = title_case(category) if category else ""
 
+    tags = []
+    for tag in (category_title, event_title, source_title):
+        if tag and tag.lower() not in {t.lower() for t in tags}:
+            tags.append(tag)
+
     return {
         "source": source_title,
         "event": event_title,
         "category": category_title,
         "categories": f"[{toml_string(category_title)}]" if category_title else "[]",
+        "tags": "[" + ", ".join(toml_string(tag) for tag in tags) + "]",
     }
 
 
@@ -161,6 +167,8 @@ def write_page(
     if meta["category"]:
         lines.append(f"category = {toml_string(meta['category'])}")
     lines.append(f"categories = {meta['categories']}")
+    if not section:
+        lines.append(f"tags = {meta['tags']}")
     lines.append("showDate = false")
     if section:
         lines.append("excludeFromSearch = true")

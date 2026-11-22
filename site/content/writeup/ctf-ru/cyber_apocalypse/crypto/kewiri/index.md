@@ -4,6 +4,7 @@ source = "CTF (RU)"
 event = "Cyber apocalypse 2025"
 category = "Crypto"
 categories = ["Crypto"]
+tags = ["Crypto", "Cyber apocalypse 2025", "CTF (RU)"]
 showDate = false
 +++
 

@@ -3,6 +3,7 @@ title = "Write-up for Plutonian Crypto made by NEMO246"
 source = "CTF (RU)"
 event = "SunshineCTF-2025"
 categories = []
+tags = ["SunshineCTF-2025", "CTF (RU)"]
 showDate = false
 +++
 

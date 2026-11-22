@@ -3,6 +3,7 @@ title = "Алиса не знает алгебру"
 source = "CTF (RU)"
 event = "HackerLab Crypto"
 categories = []
+tags = ["HackerLab Crypto", "CTF (RU)"]
 showDate = false
 +++
 

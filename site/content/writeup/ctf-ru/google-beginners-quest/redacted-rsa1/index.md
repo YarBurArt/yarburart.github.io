@@ -3,6 +3,7 @@ title = "Redacted RSA 1"
 source = "CTF (RU)"
 event = "Google beginners quest"
 categories = []
+tags = ["Google beginners quest", "CTF (RU)"]
 showDate = false
 +++
 

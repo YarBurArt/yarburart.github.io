@@ -4,6 +4,7 @@ source = "CTF (RU)"
 event = "Hack The Boo CTF 2024"
 category = "Crypto"
 categories = ["Crypto"]
+tags = ["Crypto", "Hack The Boo CTF 2024", "CTF (RU)"]
 showDate = false
 +++
 

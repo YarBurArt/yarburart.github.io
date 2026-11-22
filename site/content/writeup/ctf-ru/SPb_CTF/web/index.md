@@ -4,6 +4,7 @@ source = "CTF (RU)"
 event = "SPbCTF"
 category = "Web"
 categories = ["Web"]
+tags = ["Web", "SPbCTF", "CTF (RU)"]
 showDate = false
 +++
 
